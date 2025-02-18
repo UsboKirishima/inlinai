@@ -67,6 +67,8 @@ program
     const command = OutputParser.parseFirstCommand(output.generated_text);
     console.log(BRIGHT_GREEN + ' + ' + GREEN + '` ' +  command + ' `' + RESET);
 
+    if(!command) console.log('DEBUG No output, original text: ' + output.generated_text.replace(PROMPTS.baseLinux, ''));
+
     askQuestion(BRIGHT_MAGENTA + 'Do you want to continue?' + RESET).then((answer) => {
       if (!answer) {
         console.log(RED + 'Exiting.' + RESET);

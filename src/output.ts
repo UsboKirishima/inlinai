@@ -77,7 +77,7 @@ export class OutputParser {
                 output += line + '\n';
             }
     
-            if (insideCodeBlock && line.includes('```')) {
+            if (insideCodeBlock && (line.includes('```'))) {
                 break;
             }
         }
